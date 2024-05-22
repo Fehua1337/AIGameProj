@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  AIGameProj1
-//
-//  Created by Alisher Tulembekov on 10.05.2024.
-//
-
 import SwiftUI
 import OpenAI
 
