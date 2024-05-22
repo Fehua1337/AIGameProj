@@ -32,7 +32,7 @@ struct RegistrationView: View {
                 .textInputAutocapitalization(.never)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             Button {
-                
+                viewModel.register()
             }label: {
                 Text("Sign in")
             }
@@ -50,6 +50,9 @@ struct RegistrationView: View {
                 }
             }
             .padding(.bottom, 50)
+            .onAppear() {
+                
+            }
             
         }
         .padding()

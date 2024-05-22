@@ -13,8 +13,7 @@ struct AIGameProj1App: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-//            MainView()
-            ContentView(chatController: ChatController())
+            RegistrationView()
         }
     }
 }

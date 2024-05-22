@@ -14,10 +14,68 @@
             filePath = "AIGameProj1/Authorization/LoginViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "10"
-            endingLineNumber = "10"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "LoginViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "E6802FFB-B055-4B29-AF35-F97BD4814E69 - ea3932697646bd5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AIGameProj1.LoginViewModel.deinit"
+                  moduleName = "AIGameProj1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alishertulembekov/Desktop/swift/AIGameProj1/AIGameProj1/Authorization/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "E6802FFB-B055-4B29-AF35-F97BD4814E69 - 6dce632746da1d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AIGameProj1.LoginViewModel.__deallocating_deinit"
+                  moduleName = "AIGameProj1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alishertulembekov/Desktop/swift/AIGameProj1/AIGameProj1/Authorization/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "E6802FFB-B055-4B29-AF35-F97BD4814E69 - 1d1b907df883e1db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AIGameProj1.LoginViewModel.__allocating_init() -&gt; AIGameProj1.LoginViewModel"
+                  moduleName = "AIGameProj1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alishertulembekov/Desktop/swift/AIGameProj1/AIGameProj1/Authorization/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "E6802FFB-B055-4B29-AF35-F97BD4814E69 - c59be3b6786e060f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AIGameProj1.LoginViewModel.init() -&gt; AIGameProj1.LoginViewModel"
+                  moduleName = "AIGameProj1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alishertulembekov/Desktop/swift/AIGameProj1/AIGameProj1/Authorization/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

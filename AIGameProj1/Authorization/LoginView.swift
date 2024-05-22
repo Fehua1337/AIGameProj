@@ -29,7 +29,7 @@ struct LoginView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             
             Button {
-//                viewModel
+                viewModel.login()
             }label: {
                 Text("Sign in")
             }

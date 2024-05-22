@@ -11,7 +11,7 @@ import OpenAI
 class ChatController: ObservableObject {
     @Published var messages: [Message] = []
     
-    let openAI = OpenAI(apiToken: "sk-proj-vI71YEsAziAvS1EEtRPTT3BlbkFJvVp2eZvXdHYVrUzpdVjB")
+    let openAI = OpenAI(apiToken: "API key")
     var prompt = "Imagine that you are a game master, the game takes place in a fantasy world with magic and swords. You will guide the player by creating different events. The beginning of the player's journey will take place on a ship that was wrecked, after which the player character finds himself on an island next to which the walls of the kingdom are visible. Then come up with the plot yourself. The game should be interactive; after each event, wait for the player's response. You should only generate an event and not options for where the player will go. The player's answer can be anything."
     
     func sendNewMessage(content: String) {

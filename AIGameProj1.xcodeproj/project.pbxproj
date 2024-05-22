@@ -136,9 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				70E159642BFBA40000DDD5E3 /* RegistrationView.swift */,
-				70E1597A2BFE3BE800DDD5E3 /* LoginViewModel.swift */,
-				70E159662BFBA41C00DDD5E3 /* LoginView.swift */,
 				70E159682BFBA45B00DDD5E3 /* RegistrationViewModel.swift */,
+				70E159662BFBA41C00DDD5E3 /* LoginView.swift */,
+				70E1597A2BFE3BE800DDD5E3 /* LoginViewModel.swift */,
 				70E1596A2BFBA46E00DDD5E3 /* AuthService.swift */,
 			);
 			path = Authorization;
