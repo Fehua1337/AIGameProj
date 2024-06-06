@@ -13,7 +13,7 @@ class ChatController: ObservableObject {
     var chatId: String
     var userId: String
     var initialPrompt: String
-    let openAI = OpenAI(apiToken: "sk-proj-RMCz8LyBO3tR2ueTgzVLT3BlbkFJ97JUi7Tu5a36QqHIjJKg")
+    let openAI = OpenAI(apiToken: "Insert your OpenAI API here") //######################//
 
     init(chatId: String, userId: String, initialPrompt: String) {
         self.chatId = chatId

@@ -143,7 +143,7 @@
 		70E159432BF5032400DDD5E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				70E159BA2C0FCAC800DDD5E3 /* Chat */,
+				70E159BA2C0FCAC800DDD5E3 /* ChatModel */,
 				70E159AD2C0F26E100DDD5E3 /* Firestore */,
 			);
 			path = Model;
@@ -244,12 +244,12 @@
 			path = CreateNewChat;
 			sourceTree = "<group>";
 		};
-		70E159BA2C0FCAC800DDD5E3 /* Chat */ = {
+		70E159BA2C0FCAC800DDD5E3 /* ChatModel */ = {
 			isa = PBXGroup;
 			children = (
 				70E159482BF5129B00DDD5E3 /* ChatModel.swift */,
 			);
-			path = Chat;
+			path = ChatModel;
 			sourceTree = "<group>";
 		};
 		70E159BB2C0FD41800DDD5E3 /* Home */ = {
