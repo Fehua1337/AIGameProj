@@ -13,7 +13,7 @@ struct AIGameProj1App: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            RegistrationView()
+            RootView()
         }
     }
 }

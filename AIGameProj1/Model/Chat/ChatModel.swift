@@ -8,7 +8,9 @@
 import Foundation
 
 struct Message: Identifiable {
-    var id: UUID = .init()
+    var id: String
     var content: String
     var isUser: Bool
+    var timestamp: Date
 }
+ 

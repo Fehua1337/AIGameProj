@@ -10,22 +10,56 @@ import OpenAI
 
 class ChatController: ObservableObject {
     @Published var messages: [Message] = []
+    var chatId: String
+    var userId: String
+    var initialPrompt: String
+    let openAI = OpenAI(apiToken: "sk-proj-RMCz8LyBO3tR2ueTgzVLT3BlbkFJ97JUi7Tu5a36QqHIjJKg")
+
+    init(chatId: String, userId: String, initialPrompt: String) {
+        self.chatId = chatId
+        self.userId = userId
+        self.initialPrompt = initialPrompt
+        fetchMessages()
+    }
     
-    let openAI = OpenAI(apiToken: "API key")
-    var prompt = "Imagine that you are a game master, the game takes place in a fantasy world with magic and swords. You will guide the player by creating different events. The beginning of the player's journey will take place on a ship that was wrecked, after which the player character finds himself on an island next to which the walls of the kingdom are visible. Then come up with the plot yourself. The game should be interactive; after each event, wait for the player's response. You should only generate an event and not options for where the player will go. The player's answer can be anything."
+    func fetchMessages() {
+        UserManager.shared.fetchMessages(for: chatId, userId: userId) { result in
+            switch result {
+            case .success(let messagesData):
+                self.messages = messagesData.map { messageData in
+                    Message(
+                        id: messageData.id,
+                        content: messageData.content,
+                        isUser: messageData.isUser,
+                        timestamp: messageData.timestamp
+                    )
+                }
+            case .failure(let error):
+                print("Error fetching messages: \(error.localizedDescription)")
+            }
+        }
+    }
     
     func sendNewMessage(content: String) {
-        let userMessage = Message(content: content, isUser: true)
+        let messageId = UUID().uuidString
+        let timestamp = Date()
+        let userMessage = Message(id: messageId, content: content, isUser: true, timestamp: timestamp)
         self.messages.append(userMessage)
-        getBotReply(text: prompt)
-        
+        UserManager.shared.sendMessage(chatId: chatId, userId: userId, content: content, isUser: true) { result in
+            switch result {
+            case .success():
+                self.getBotReply(text: content)
+            case .failure(let error):
+                print("Error sending message: \(error.localizedDescription)")
+            }
+        }
     }
     
     func getBotReply(text: String) {
         let query = ChatQuery(
-            messages: [.init(role: .user, content: text)!] + self.messages.map({
+            messages: [.init(role: .user, content: text)!] + self.messages.map {
                 .init(role: .user, content: $0.content)!
-            }),
+            },
             model: .gpt3_5Turbo_0125
         )
         
@@ -35,13 +69,27 @@ class ChatController: ObservableObject {
                 guard let choice = success.choices.first else {
                     return
                 }
-                let message = choice.message.content?.string
+                let messageContent = choice.message.content?.string ?? ""
                 DispatchQueue.main.async {
-                    self.messages.append(Message(content: message ?? "", isUser: false))
+                    let messageId = UUID().uuidString
+                    let timestamp = Date()
+                    let botMessage = Message(id: messageId, content: messageContent, isUser: false, timestamp: timestamp)
+                    self.messages.append(botMessage)
+                    UserManager.shared.sendMessage(chatId: self.chatId, userId: self.userId, content: messageContent, isUser: false) { result in
+                        if case let .failure(error) = result {
+                            print("Error sending bot reply: \(error.localizedDescription)")
+                        }
+                    }
                 }
             case .failure(let failure):
-                print(failure)
+                print("Error getting bot reply: \(failure)")
             }
+        }
+    }
+    
+    func sendInitialAIReplyIfNeeded(prompt: String) {
+        if messages.isEmpty {
+            getBotReply(text: prompt)
         }
     }
 }
